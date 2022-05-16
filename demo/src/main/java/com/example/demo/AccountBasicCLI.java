@@ -1,9 +1,11 @@
 package com.example.demo;
 
 import com.example.demo.*;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class AccountBasicCLI {
     private CreateAccountOperationUI createAccountOperationUI;
     private BankCore bankCore;
@@ -21,7 +23,7 @@ public class AccountBasicCLI {
             bankCore.createNewAccount(accType, clientID);
         } catch (Exception e) {
             System.out.println("Incorrect input");
-            System.out.println(e);
+           // System.out.println(e);
         }
 
     }

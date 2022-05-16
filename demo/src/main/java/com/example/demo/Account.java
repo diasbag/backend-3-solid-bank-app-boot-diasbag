@@ -1,18 +1,16 @@
 package com.example.demo;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.Setter;
+
+@AllArgsConstructor
 public class Account {
     AccountType accountType;
     private String id;
     private String clientID;
     private double balance;
     private boolean withdrawAllowed;
-    public Account(AccountType accountType, String id, String clientID, double balance, boolean withdrawAllowed) {
-        this.accountType = accountType;
-        this.id = id;
-        this.clientID = clientID;
-        this.balance = balance;
-        this.withdrawAllowed = withdrawAllowed;
-    }
     public String toString() {
         return "[Account{, id='" + id + "', clientID='" + clientID + "', balance=" + balance;
     }
@@ -39,6 +37,9 @@ public class Account {
     }
     public void setId(String id) {
         this.id = id;
+    }
+    public double getBalance() {
+        return balance;
     }
     public void setBalance(double balance) {
         this.balance = balance;

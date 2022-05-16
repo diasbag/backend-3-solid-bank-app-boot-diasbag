@@ -1,7 +1,10 @@
 package com.example.demo;
 
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 
+@Component
 public class AccountListingServiceImpI implements AccountListingService{
     private AccountDAO accountDAO;
 
@@ -10,12 +13,14 @@ public class AccountListingServiceImpI implements AccountListingService{
     }
     @Override
     public Account getClientAccount(String clientID, String accountID) {
-        return null;
+
+        return accountDAO.getClientAccount(clientID, accountID);
     }
 
     @Override
     public AccountWithdraw getClientWithdrawAccount(String clientID, String accountID) {
-        return null;
+
+        return accountDAO.getClientWithdrawAccount(clientID, accountID);
     }
 
     @Override

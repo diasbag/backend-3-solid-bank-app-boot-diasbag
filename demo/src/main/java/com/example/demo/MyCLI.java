@@ -1,7 +1,13 @@
 package com.example.demo;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import org.springframework.stereotype.Component;
+
 import java.util.Scanner;
 
+@Getter
+@Component
 public class MyCLI implements CLIUI{
     private Scanner scanner;
 
@@ -14,11 +20,21 @@ public class MyCLI implements CLIUI{
     }
 
     public double requestClientAmount() {
+        double amount;
+        String str = scanner.nextLine();
+        try {
+            amount = Double.parseDouble(str);
+            return amount;
+        } catch (Exception e) {
+            System.out.println(e);
+        }
         return 0;
     }
 
     public String requestClientAccountNumber() {
-        return null;
+        System.out.println("Type account ID");
+        String accountNumber = scanner.nextLine();
+        return accountNumber;
     }
     @Override
     public AccountType requestAccountType() {

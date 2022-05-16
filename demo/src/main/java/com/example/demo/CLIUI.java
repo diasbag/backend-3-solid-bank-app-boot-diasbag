@@ -1,5 +1,8 @@
 package com.example.demo;
 
-public interface CLIUI extends CreateAccountOperationUI{
+import org.springframework.stereotype.Service;
+
+@Service
+public interface CLIUI extends CreateAccountOperationUI, WithdrawDepositOperationCLIUI{
 
 }

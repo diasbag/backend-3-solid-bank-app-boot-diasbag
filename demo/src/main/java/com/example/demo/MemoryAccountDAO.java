@@ -1,8 +1,11 @@
 package com.example.demo;
 
+import org.springframework.stereotype.Repository;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class MemoryAccountDAO implements AccountDAO{
     private List<Account> accountList;
     MemoryAccountDAO() {
@@ -23,8 +26,9 @@ public class MemoryAccountDAO implements AccountDAO{
     }
 
     @Override
-    public void updateAccount(Account account) {
-        System.out.println("UPDATED");
+    public void updateAccount(Account account, double amount) {
+
+        account.setBalance(account.getBalance() + amount);
     }
 
     @Override
@@ -34,11 +38,21 @@ public class MemoryAccountDAO implements AccountDAO{
 
     @Override
     public AccountWithdraw getClientWithdrawAccount(String clientID, String accountID) {
+        for(Account account: accountList) {
+            if (account.getClientID().equals(clientID) && account.getId().equals(accountID) && account.isWithdrawAllowed()) {
+                return (AccountWithdraw) account;
+            }
+        }
         return null;
     }
 
     @Override
     public Account getClientAccount(String clientID, String accountID) {
+        for (Account account : accountList) {
+            if (account.getClientID().equals(clientID) && account.getId().equals(accountID)) {
+                return account;
+            }
+        }
         return null;
     }
 }
