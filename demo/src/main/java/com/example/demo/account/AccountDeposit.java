@@ -1,5 +1,6 @@
-package com.example.demo;
-import com.example.demo.Account;
+package com.example.demo.account;
+import com.example.demo.account.Account;
+import com.example.demo.account.AccountType;
 
 public class AccountDeposit extends Account{
     public AccountDeposit(AccountType accountType, String id, String clientID, double balance, boolean withdrawAllowed) {

@@ -1,5 +1,6 @@
-package com.example.demo;
+package com.example.demo.services;
 
+import com.example.demo.account.AccountType;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,8 +1,6 @@
-package com.example.demo;
+package com.example.demo.account;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.Setter;
 
 @AllArgsConstructor
 public class Account {

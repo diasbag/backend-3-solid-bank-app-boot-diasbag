@@ -1,5 +1,8 @@
-package com.example.demo;
+package com.example.demo.transaction;
 
+import com.example.demo.dao.TransactionDAO;
+import com.example.demo.account.Account;
+import com.example.demo.services.AccountDepositService;
 import org.springframework.stereotype.Component;
 
 @Component

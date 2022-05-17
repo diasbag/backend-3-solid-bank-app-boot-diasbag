@@ -1,5 +1,8 @@
-package com.example.demo;
+package com.example.demo.dao;
 
+import com.example.demo.account.AccountWithdraw;
+import com.example.demo.account.Account;
+import com.example.demo.account.AccountType;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

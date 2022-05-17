@@ -1,5 +1,8 @@
-package com.example.demo;
+package com.example.demo.services;
 
+import com.example.demo.account.Account;
+import com.example.demo.account.AccountType;
+import com.example.demo.account.AccountWithdraw;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

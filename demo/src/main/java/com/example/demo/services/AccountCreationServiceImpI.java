@@ -1,9 +1,11 @@
-package com.example.demo;
+package com.example.demo.services;
 
+import com.example.demo.dao.AccountDAO;
+import com.example.demo.account.*;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AccountCreationServiceImpI implements AccountCreationService{
+public class AccountCreationServiceImpI implements AccountCreationService {
     AccountDAO accountDAO;
     public AccountCreationServiceImpI(AccountDAO accountDAO) {
         this.accountDAO = accountDAO;

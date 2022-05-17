@@ -1,5 +1,6 @@
-package com.example.demo;
+package com.example.demo.dao;
 
+import com.example.demo.transaction.Transaction;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

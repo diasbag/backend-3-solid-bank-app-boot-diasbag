@@ -1,12 +1,16 @@
-package com.example.demo;
+package com.example.demo.dao;
 
+import com.example.demo.account.Account;
+import com.example.demo.account.AccountType;
+import com.example.demo.account.AccountWithdraw;
+import com.example.demo.dao.AccountDAO;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class MemoryAccountDAO implements AccountDAO{
+public class MemoryAccountDAO implements AccountDAO {
     private List<Account> accountList;
     MemoryAccountDAO() {
         this.accountList = new ArrayList<Account>();

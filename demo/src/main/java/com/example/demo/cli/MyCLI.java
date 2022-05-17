@@ -1,6 +1,7 @@
-package com.example.demo;
+package com.example.demo.cli;
 
-import lombok.AllArgsConstructor;
+import com.example.demo.account.AccountType;
+import com.example.demo.cli.CLIUI;
 import lombok.Getter;
 import org.springframework.stereotype.Component;
 
@@ -8,7 +9,7 @@ import java.util.Scanner;
 
 @Getter
 @Component
-public class MyCLI implements CLIUI{
+public class MyCLI implements CLIUI {
     private Scanner scanner;
 
     MyCLI() {

@@ -1,6 +1,10 @@
-package com.example.demo;
+package com.example.demo.cli;
 
-import com.example.demo.*;
+import com.example.demo.services.AccountListingService;
+import com.example.demo.BankCore;
+import com.example.demo.CreateAccountOperationUI;
+import com.example.demo.account.Account;
+import com.example.demo.account.AccountType;
 import org.springframework.stereotype.Component;
 
 import java.util.List;

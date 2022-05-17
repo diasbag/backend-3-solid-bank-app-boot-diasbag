@@ -1,10 +1,11 @@
-package com.example.demo;
+package com.example.demo.services;
 
-import lombok.AllArgsConstructor;
+import com.example.demo.dao.AccountDAO;
+import com.example.demo.account.Account;
 import org.springframework.stereotype.Component;
 
 @Component
-public class AccountDepositServiceImpl implements AccountDepositService{
+public class AccountDepositServiceImpl implements AccountDepositService {
     private AccountDAO accountDAO;
 
     AccountDepositServiceImpl(AccountDAO accountDAO) {
