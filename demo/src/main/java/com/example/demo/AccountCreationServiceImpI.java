@@ -9,6 +9,7 @@ public class AccountCreationServiceImpI implements AccountCreationService{
         this.accountDAO = accountDAO;
     }
 
+    //Создает аккаунт для клиентов
     @Override
     public void create(AccountType accountType, long bankID, String clientID, long accountID) {
         String accType = accountType == null ? "" : accountType.toString();

@@ -5,5 +5,5 @@ import org.springframework.stereotype.Service;
 
 @Service
 public interface AccountDepositService {
-    void deposit(double amount, AccountWithdraw account);
+    void deposit(double amount, Account account);
 }

@@ -11,6 +11,7 @@ public class TransactionWithdraw {
         this.transactionDAO = transactionDAO;
     }
 
+    //Метод execute() выполняет снятие денег вызывая метод withdraw() из AccountWithdrawService
     public void execute(AccountWithdraw accountWithdraw, double amount) {
         accountWithdrawService.withdraw(amount, accountWithdraw);
     }

@@ -28,7 +28,12 @@ public class TransactionDepositCLI {
             System.out.println("Incorrect input");
             return;
         }
-        transactionDeposit.execute((AccountWithdraw) account, amount);
-        System.out.printf("%.2f$ transferred to %s account\n", amount, accountNumber);
+        try {
+            transactionDeposit.execute(account, amount);
+            System.out.printf("%.2f$ transferred to %s account\n", amount, accountNumber);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
     }
 }

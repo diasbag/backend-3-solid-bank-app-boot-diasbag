@@ -11,18 +11,22 @@ public class AccountListingServiceImpI implements AccountListingService{
     public AccountListingServiceImpI(AccountDAO accountDAO) {
         this.accountDAO = accountDAO;
     }
+
+    //Возвращает Акк клиента
     @Override
     public Account getClientAccount(String clientID, String accountID) {
 
         return accountDAO.getClientAccount(clientID, accountID);
     }
 
+    //Возвращает акк клиента для вывода денег
     @Override
     public AccountWithdraw getClientWithdrawAccount(String clientID, String accountID) {
 
         return accountDAO.getClientWithdrawAccount(clientID, accountID);
     }
 
+    //Возвращает счета клиентов
     @Override
     public List<Account> getClientAccounts(String clientID) {
         return accountDAO.getClientAccounts(clientID);

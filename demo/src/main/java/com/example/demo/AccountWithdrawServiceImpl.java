@@ -9,16 +9,10 @@ public class AccountWithdrawServiceImpl implements AccountWithdrawService{
         this.accountDAO = accountDAO;
     }
 
+
+    //Метод withdraw() выполняет снятие денег вызывая и передавая параметры в updateAccount()
     @Override
     public void withdraw(double amount, AccountWithdraw account) {
-        if (amount < 0) {
-            System.out.println("Incorrect value");
-            return;
-        }
-        if (account.getBalance() < amount) {
-            System.out.println("There is not enough money in the account!!!");
-            return;
-        }
         accountDAO.updateAccount(account, -amount);
     }
 }

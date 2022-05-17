@@ -13,11 +13,13 @@ public class MemoryAccountDAO implements AccountDAO{
     }
 
 
+    //Возвращает список Счетов
     @Override
     public List<Account> getClientAccounts(String clientID) {
         return accountList;
     }
 
+    // Создает новый акк
     @Override
     public void createNewAccount(Account account) {
 
@@ -25,6 +27,7 @@ public class MemoryAccountDAO implements AccountDAO{
         System.out.println("Bank account created");
     }
 
+    //Обновляет акк
     @Override
     public void updateAccount(Account account, double amount) {
 
@@ -36,6 +39,7 @@ public class MemoryAccountDAO implements AccountDAO{
         return null;
     }
 
+    //Возвращает счета AccountWithdraw
     @Override
     public AccountWithdraw getClientWithdrawAccount(String clientID, String accountID) {
         for(Account account: accountList) {
@@ -46,6 +50,7 @@ public class MemoryAccountDAO implements AccountDAO{
         return null;
     }
 
+    //Возвращает акк клиента по ID
     @Override
     public Account getClientAccount(String clientID, String accountID) {
         for (Account account : accountList) {

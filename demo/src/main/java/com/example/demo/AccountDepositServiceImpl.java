@@ -11,7 +11,7 @@ public class AccountDepositServiceImpl implements AccountDepositService{
         this.accountDAO = accountDAO;
     }
     @Override
-    public void deposit(double amount, AccountWithdraw account) {
+    public void deposit(double amount, Account account) {
         if (amount < 0) {
             System.out.println("Incorrect value");
             return;

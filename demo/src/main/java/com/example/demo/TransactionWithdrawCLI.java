@@ -14,6 +14,7 @@ public class TransactionWithdrawCLI {
         this.accountListing = accountListing;
     }
 
+    //Метод withdrawMoney выполняет снятие денег вызывая функцию execute()
     public void withdrawMoney(String clientID) {
         String accountNumber = withdrawDepositOperationCLIUI.requestClientAccountNumber();
         AccountWithdraw accountWithdraw = accountListing.getClientWithdrawAccount(clientID, accountNumber);
@@ -27,6 +28,12 @@ public class TransactionWithdrawCLI {
             System.out.println("Incorrect input");
             return;
         }
-        transactionWithdraw.execute(accountWithdraw, amount);
+        if(accountWithdraw.getBalance() < amount) {
+            System.out.println("There is not enough money in the account!!!");
+            return;
+        }
+            transactionWithdraw.execute(accountWithdraw, amount);
+            System.out.printf("%.2f$ transferred from %s account\n", amount, accountNumber);
+
     }
 }
