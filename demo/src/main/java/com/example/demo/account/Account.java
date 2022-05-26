@@ -1,11 +1,18 @@
 package com.example.demo.account;
 
 import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
 
+import javax.persistence.Id;
+
+@Data
+@Builder
 @AllArgsConstructor
 public class Account {
     AccountType accountType;
-    private String id;
+
+    private @Id String id;
     private String clientID;
     private double balance;
     private boolean withdrawAllowed;
