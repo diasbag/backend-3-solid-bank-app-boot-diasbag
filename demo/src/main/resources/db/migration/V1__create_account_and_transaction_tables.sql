@@ -1,5 +1,5 @@
 CREATE TABLE Account(
-    id INT NOT NULL AUTO_INCREMENT,
+    id INT NOT NULL,
   account_id VARCHAR(20) NOT NULL ,
   accountType VARCHAR(20) NOT NULL ,
   client_id VARCHAR(20) NOT NULL ,
@@ -11,5 +11,5 @@ CREATE TABLE Account(
 CREATE TABLE Transaction(
     transaction_id INT NOT NULL ,
     amount DECIMAL,
-    CONSTRAINT PK_transaction PRIMARY KEY (id)
+    CONSTRAINT PK_transaction PRIMARY KEY (transaction_id)
 );
