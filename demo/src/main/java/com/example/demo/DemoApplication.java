@@ -31,6 +31,7 @@ public class DemoApplication implements CommandLineRunner {
         TransactionDepositCLI transactionDepositCLI = context.getBean(TransactionDepositCLI.class);
         TransactionWithdrawCLI transactionWithdrawCLI = context.getBean(TransactionWithdrawCLI.class);
 
+
         String helpMessage = "1 - show accounts\n2 - create account\n3 - deposit\n4 - withdraw\n5 - transfer\n6 - this message\n7 - exit\n";
         System.out.printf("Welcome to CLI bank service\n");
         System.out.printf("Enter operation number: \n");
@@ -70,6 +71,7 @@ public class DemoApplication implements CommandLineRunner {
             }
         }
         myCLI.getScanner().close();
+        System.exit(0);
     }
 
 }

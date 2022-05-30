@@ -3,14 +3,15 @@ package com.example.demo.account;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import org.springframework.data.annotation.Id;
 
-import javax.persistence.Id;
 
 @Data
 @Builder
 @AllArgsConstructor
+
 public class Account {
-    AccountType accountType;
+    private String accountType;
 
     private @Id String id;
     private String clientID;
@@ -31,10 +32,10 @@ public class Account {
     public void setWithdrawAllowed(boolean withdrawAllowed){
         this.withdrawAllowed = withdrawAllowed;
     }
-    public AccountType getAccountType() {
+  public String getAccountType() {
         return this.accountType;
     }
-    public void setAccountType(AccountType accountType) {
+    public void setAccountType(String accountType) {
         this.accountType = accountType;
     }
     public String getId() {

@@ -1,21 +1,27 @@
 package com.example.demo.transaction;
 
+import com.example.demo.TransactionRepository;
+import com.example.demo.account.Account;
 import com.example.demo.dao.TransactionDAO;
 import com.example.demo.account.AccountWithdraw;
 import com.example.demo.services.AccountWithdrawService;
+import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
 
 @Component
+@AllArgsConstructor
 public class TransactionWithdraw {
     private AccountWithdrawService accountWithdrawService;
-    private TransactionDAO transactionDAO;
-    public TransactionWithdraw(AccountWithdrawService accountWithdrawService, TransactionDAO transactionDAO) {
-        this.accountWithdrawService = accountWithdrawService;
-        this.transactionDAO = transactionDAO;
-    }
+    private TransactionRepository transactionRepository;
+//    private TransactionDAO transactionDAO;
+//    public TransactionWithdraw(AccountWithdrawService accountWithdrawService, TransactionDAO transactionDAO) {
+//        this.accountWithdrawService = accountWithdrawService;
+//        this.transactionDAO = transactionDAO;
+//    }
 
     //Метод execute() выполняет снятие денег вызывая метод withdraw() из AccountWithdrawService
-    public void execute(AccountWithdraw accountWithdraw, double amount) {
+    public void execute(Account accountWithdraw, double amount) {
         accountWithdrawService.withdraw(amount, accountWithdraw);
+        transactionRepository.addTransaction(accountWithdraw.getId(), -amount);
     }
 }

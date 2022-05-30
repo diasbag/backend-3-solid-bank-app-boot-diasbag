@@ -1,5 +1,6 @@
 package com.example.demo.cli;
 
+import com.example.demo.account.Account;
 import com.example.demo.services.AccountListingService;
 import com.example.demo.transaction.TransactionWithdraw;
 import com.example.demo.account.AccountWithdraw;
@@ -20,7 +21,7 @@ public class TransactionWithdrawCLI {
     //Метод withdrawMoney выполняет снятие денег вызывая функцию execute()
     public void withdrawMoney(String clientID) {
         String accountNumber = withdrawDepositOperationCLIUI.requestClientAccountNumber();
-        AccountWithdraw accountWithdraw = accountListing.getClientWithdrawAccount(clientID, accountNumber);
+        Account accountWithdraw = accountListing.getClientWithdrawAccount(clientID, accountNumber);
         if (accountWithdraw == null) {
             System.out.println("Account not Found");
             return;
