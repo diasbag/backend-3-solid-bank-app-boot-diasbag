@@ -22,3 +22,5 @@
  _7 - exit_
 
 ## Для работы в Swagger UI
+
+`http://localhost:8080/swagger-ui/index.html#/`
