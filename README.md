@@ -23,4 +23,4 @@
 
 ## Для работы в Swagger UI
 
-`http://localhost:8080/swagger-ui/index.html#/`
+**Перейдите на страницу** [`Swagger UI`](`http://localhost:8080/swagger-ui/index.html#/`)
