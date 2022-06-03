@@ -22,17 +22,17 @@ public class AccountCreationServiceImpI implements AccountCreationService {
         Account ac;
         if (accType.equals("FIXED")) {
             ac = new FixedAccount(accountType.toString(), String.format("%03d%06d", 1, accountID), clientID, 0, false);
-            accountRepository.insert(ac.getAccountType(), ac.getId(), ac.getClientID(), ac.isWithdrawAllowed());
+            accountRepository.addAccount(ac.getAccountType(), ac.getId(), ac.getClientID(), ac.isWithdrawAllowed());
             System.out.println("Bank Account Created");
             //accountDAO.createNewAccount(ac);
         } else if (accType.equals("SAVING")){
             ac = new SavingAccount(accountType.toString(), String.format("%03d%06d", 1, accountID), clientID, 0, true);
-            accountRepository.insert(ac.getAccountType(), ac.getId(), ac.getClientID(), ac.isWithdrawAllowed());
+            accountRepository.addAccount(ac.getAccountType(), ac.getId(), ac.getClientID(), ac.isWithdrawAllowed());
             System.out.println("Bank Account Created");
 
         } else if (accType.equals("CHECKING")) {
             ac = new CheckingAccount(accountType.toString(), String.format("%03d%06d", 1, accountID), clientID, 0, true);
-            accountRepository.insert(ac.getAccountType(), ac.getId(), ac.getClientID(), ac.isWithdrawAllowed());
+            accountRepository.addAccount(ac.getAccountType(), ac.getId(), ac.getClientID(), ac.isWithdrawAllowed());
             System.out.println("Bank Account Created");
 
         } else {

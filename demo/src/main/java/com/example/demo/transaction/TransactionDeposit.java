@@ -20,6 +20,8 @@ public class TransactionDeposit {
 
     public void execute(Account account, double amount) {
         accountDepositService.deposit(amount, account);
-        transactionRepository.addTransaction(account.getId(), amount);
+        Transaction transaction = new Transaction(amount, account.getId());
+        transactionRepository.save(transaction);
+        //transactionRepository.addTransaction(account.getId(), amount);
     }
 }

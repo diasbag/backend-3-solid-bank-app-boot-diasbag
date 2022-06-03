@@ -22,6 +22,8 @@ public class TransactionWithdraw {
     //Метод execute() выполняет снятие денег вызывая метод withdraw() из AccountWithdrawService
     public void execute(Account accountWithdraw, double amount) {
         accountWithdrawService.withdraw(amount, accountWithdraw);
-        transactionRepository.addTransaction(accountWithdraw.getId(), -amount);
+        Transaction transaction= new Transaction(-1*amount,accountWithdraw.getId());
+        transactionRepository.save(transaction);
+        //transactionRepository.addTransaction(accountWithdraw.getId(), -amount);
     }
 }

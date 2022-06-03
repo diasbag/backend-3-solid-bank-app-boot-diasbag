@@ -23,7 +23,7 @@ public class TransactionWithdrawCLI {
         String accountNumber = withdrawDepositOperationCLIUI.requestClientAccountNumber();
         Account accountWithdraw = accountListing.getClientWithdrawAccount(clientID, accountNumber);
         if (accountWithdraw == null) {
-            System.out.println("Account not Found");
+            System.out.println("You cannot withdraw money!!");
             return;
         }
         System.out.println("Type amount of money for withdraw");

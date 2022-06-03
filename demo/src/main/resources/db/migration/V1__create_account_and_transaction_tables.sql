@@ -8,7 +8,7 @@ CREATE TABLE Account(
 );
 
 CREATE TABLE Transaction(
-    transaction_id INT AUTO_INCREMENT NOT NULL ,
+    transaction_id INT NOT NULL AUTO_INCREMENT,
     amount DECIMAL,
     account_id VARCHAR (20),
     CONSTRAINT PK_transaction PRIMARY KEY (transaction_id)

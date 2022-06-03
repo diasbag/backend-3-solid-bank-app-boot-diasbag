@@ -27,10 +27,10 @@ public class AccountBasicCLI {
 
     public void createAccountRequest(String clientID) {
         try {
-            AccountType accType = createAccountOperationUI.requestAccountType();
+            String accType = String.valueOf(createAccountOperationUI.requestAccountType());
             bankCore.createNewAccount(accType, clientID);
         } catch (Exception e) {
-            System.out.println("Incorrect input");
+            System.out.println("Incorrect Account Type");
             System.out.println(e);
         }
 

@@ -25,7 +25,6 @@ public class DemoApplication implements CommandLineRunner {
     public void run(String... arg0) throws Exception {
         boolean running = true;
         String clientID = "1";
-
         MyCLI myCLI = context.getBean(MyCLI.class);
         AccountBasicCLI accountBasicCLI = context.getBean(AccountBasicCLI.class);
         TransactionDepositCLI transactionDepositCLI = context.getBean(TransactionDepositCLI.class);
