@@ -20,3 +20,7 @@
  _6 - this message_
  
  _7 - exit_
+
+## Для работы в Swagger UI
+
+**Перейдите по ссылке** `http://localhost:8080/swagger-ui/index.html#/`
