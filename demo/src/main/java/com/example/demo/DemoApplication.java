@@ -4,14 +4,22 @@ import com.example.demo.cli.AccountBasicCLI;
 import com.example.demo.cli.MyCLI;
 import com.example.demo.cli.TransactionDepositCLI;
 import com.example.demo.cli.TransactionWithdrawCLI;
+import io.swagger.v3.oas.annotations.enums.SecuritySchemeIn;
+import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
+import io.swagger.v3.oas.annotations.security.SecurityScheme;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Bean;
 
 
 @SpringBootApplication
+@SecurityScheme(name = "basicauth", scheme = "basic",
+        type = SecuritySchemeType.HTTP, in =
+        SecuritySchemeIn.HEADER)
 public class DemoApplication implements CommandLineRunner {
 
     @Autowired
@@ -72,5 +80,8 @@ public class DemoApplication implements CommandLineRunner {
         myCLI.getScanner().close();
         System.exit(0);
     }
-
+    @Bean
+    public ModelMapper modelMapper() {
+        return new ModelMapper();
+    }
 }

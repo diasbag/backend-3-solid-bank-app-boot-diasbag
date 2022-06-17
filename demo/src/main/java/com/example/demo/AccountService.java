@@ -17,19 +17,20 @@ public class AccountService {
 
     private  BankCore bankCore;
 
-    public List<Account> getAccounts() {
-        return accountRepository.getAccounts();
+    public List<Account> getAccounts(String clientId) {
+
+        return accountRepository.getAccountsByClientID(clientId);
     }
-    public ResponseEntity<?> getAccountById(String id) {
-        Account account = accountRepository.findByIdEquals(id);
+    public ResponseEntity<?> getAccountById(String id, String clienId) {
+        Account account = accountRepository.findAccountByIdAndClientID(id, clienId);
         if (account == null) {
             return new ResponseEntity<>("Account not Found", HttpStatus.NOT_FOUND);
         }
         return new ResponseEntity<>(account, HttpStatus.OK);
     }
 
-    public ResponseEntity<String> deleteById(String accountId) {
-        Account account = accountRepository.findById(accountId).orElse(null);
+    public ResponseEntity<String> deleteById(String accountId, String clientId) {
+        Account account = accountRepository.findAccountByIdAndClientID(accountId, clientId);
         if (account == null) {
             return new ResponseEntity<>("Account does not exist!!!", HttpStatus.NOT_FOUND);
         }

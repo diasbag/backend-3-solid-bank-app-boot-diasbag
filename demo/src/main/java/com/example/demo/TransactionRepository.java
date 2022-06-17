@@ -16,6 +16,5 @@ public interface TransactionRepository extends CrudRepository<Transaction, Integ
 
     @Query("SELECT * FROM Transaction t Where t.account_id = :accountId")
     List<Transaction> findAllByAccountId(String accountId);
-
     List<Transaction> getTransactionsByAccountId(String accountId);
 }

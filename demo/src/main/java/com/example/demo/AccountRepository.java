@@ -12,8 +12,8 @@ import java.util.List;
 @Repository
 public interface AccountRepository extends CrudRepository<Account, String> {
 
-    @Query("SELECT * FROM Account")
-    List<Account> getAccounts();
+    @Query("SELECT * FROM Account a WHERE a.client_id = :clientId")
+    List<Account> getAccountsByClientID(String clientId);
     @Query("select id from Account a where  a.account_type =:accountType and a.client_id = :clientId")
     List<Account> getAccountsByAccountType(String clientId, String accountType);
 
@@ -26,6 +26,7 @@ public interface AccountRepository extends CrudRepository<Account, String> {
     void updateAccount(String accountId, double amount);
 
     Account findAccountByIdAndClientID(String accountId, String clientId);
-    Account findByIdEquals(String id);
+
+    Account findByIdAndClientIDEquals(String accountDd, String clientId);
 
 }
